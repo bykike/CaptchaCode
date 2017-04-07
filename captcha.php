@@ -1,20 +1,20 @@
 <?php
 
-// Start the session so we can store our generated key inside it for later retrieval
+// Inicio la sesión para poder almacenar la clave generada dentro de ella para su posterior recuperación
 
 session_start( );
 
-// Set to whatever size you want, or randomize for more security
+// Establecer el tamaño que deseo, o al azar para más seguridad
 
 $captchaTextSize = 7;
 
 do {
 
-    // Generate a random string and encrypt it with md5
+    // Generar una cadena aleatoria y cifrarla con md5
 
     $md5Hash = md5( microtime( ) * mktime( ) );
 
-    // Remove any hard to distinguish characters from our hash
+    // Eliminar cualquier carácter difícil de distinguir de nuestro hash
 
     preg_replace( '([1aeilou0])', "", $md5Hash );
 
